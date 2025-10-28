@@ -1,0 +1,41 @@
+<!-- Prevent indexing by search engines -->
+<meta name="robots" content="noindex, nofollow">
+
+<!-- SEO Meta (still useful for social sharing or previews) -->
+<meta name="description" content="Mithun KP is a Full Stack Developer specializing in .NET Core, Angular, and modern web technologies.">
+<meta name="keywords" content="Mithun KP, Full Stack Developer, .NET Core, Angular, Web Developer, Kochi Developer">
+<meta name="author" content="Mithun KP">
+
+<!-- Open Graph (Facebook / LinkedIn preview) -->
+<meta property="og:title" content="Mithun KP - Full Stack Developer">
+<meta property="og:description" content="Full Stack Developer specializing in .NET Core, Angular, and modern web technologies.">
+<meta property="og:image" content="https://www.mithunkp.com/MithunKP.jpg">
+<meta property="og:url" content="https://www.mithunkp.com">
+<meta property="og:type" content="profile">
+
+<!-- Twitter Card (social preview) -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mithun KP - Full Stack Developer">
+<meta name="twitter:description" content="Full Stack Developer specializing in .NET Core, Angular, and modern web technologies.">
+<meta name="twitter:image" content="https://www.mithunkp.com/MithunKP.jpg">
+
+<!-- JSON-LD Schema.org (Person structured data - optional) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mithun KP",
+  "image": "https://www.mithunkp.com/MithunKP.jpg",
+  "jobTitle": "Full Stack Developer",
+  "url": "https://www.mithunkp.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/mithunkp",
+    "https://github.com/mithunkpdev"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kochi",
+    "addressCountry": "India"
+  }
+}
+</script>
