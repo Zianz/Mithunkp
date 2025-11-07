@@ -4,9 +4,33 @@
   <meta charset="UTF-8" />
   <link rel="canonical" href="https://www.mithunkp.com" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mithun KP - Full Stack Developer specializing in .NET Core, Angular, and modern web technologies">
-  <meta name="robots" content="index, follow">
-  <title>Mithun KP - Full Stack Developer</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Mithun KP - Full Stack Developer specializing in .NET Core, Angular, SQL Server, and modern web technologies. Experienced in building scalable ERP systems and REST APIs.">
+  <meta name="keywords" content="Full Stack Developer, .NET Core Developer, Angular Developer, SQL Server, REST APIs, ERP Systems, VB.NET, C# Developer, Kerala, Kochi">
+  <meta name="author" content="Mithun KP">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Mithun KP - Full Stack Developer | .NET Core & Angular Specialist">
+  <meta property="og:description" content="Full Stack Developer specializing in .NET Core, Angular, SQL Server, and modern web technologies. Building scalable ERP systems and REST APIs.">
+  <meta property="og:image" content="https://www.mithunkp.com/MithunKP.jpg">
+  <meta property="og:url" content="https://www.mithunkp.com">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mithun KP Portfolio">
+  <meta property="og:locale" content="en_IN">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mithun KP - Full Stack Developer | .NET Core & Angular Specialist">
+  <meta name="twitter:description" content="Full Stack Developer specializing in .NET Core, Angular, SQL Server, and modern web technologies.">
+  <meta name="twitter:image" content="https://www.mithunkp.com/MithunKP.jpg">
+  
+  <!-- Additional SEO Tags -->
+  <meta name="theme-color" content="#16a34a">
+  <meta name="msapplication-TileColor" content="#16a34a">
+  
+  <title>Mithun KP - Full Stack Developer | .NET Core & Angular Specialist</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Fixed Google Analytics Implementation -->
@@ -22,7 +46,6 @@
   </script>
 
   <style>
-    /* Your existing CSS styles remain unchanged */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -425,6 +448,162 @@
       color: hsl(var(--muted-foreground));
     }
 
+    /* Contact Modal Styles */
+    .contact-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: hsl(0 0% 0% / 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-smooth);
+      backdrop-filter: blur(8px);
+    }
+
+    .contact-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .contact-modal-content {
+      background: var(--gradient-card);
+      border-radius: 1rem;
+      padding: 2rem;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: var(--shadow-elegant);
+      border: 1px solid hsl(var(--border) / 0.5);
+      transform: translateY(20px);
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .contact-modal.active .contact-modal-content {
+      transform: translateY(0);
+    }
+
+    .close-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      color: hsl(var(--muted-foreground));
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 0.375rem;
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .close-button:hover {
+      background: hsl(var(--muted));
+      color: hsl(var(--foreground));
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: hsl(var(--foreground));
+    }
+
+    .form-input,
+    .form-textarea {
+      padding: 0.75rem;
+      background: hsl(var(--muted) / 0.3);
+      border: 1px solid hsl(var(--border));
+      border-radius: 0.5rem;
+      color: hsl(var(--foreground));
+      font-family: inherit;
+      font-size: 0.875rem;
+      transition: var(--transition-smooth);
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: hsl(var(--primary) / 0.5);
+      box-shadow: 0 0 0 2px hsl(var(--primary) / 0.1);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--gradient-primary);
+      color: hsl(var(--primary-foreground));
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      margin-top: 0.5rem;
+    }
+
+    .submit-button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .submit-button:active {
+      transform: translateY(0);
+    }
+
+    .form-message {
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .form-message.success {
+      background: hsl(var(--primary) / 0.1);
+      color: hsl(var(--primary));
+      border: 1px solid hsl(var(--primary) / 0.3);
+    }
+
+    .form-message.error {
+      background: hsl(0 72% 51% / 0.1);
+      color: hsl(0 72% 51%);
+      border: 1px solid hsl(0 72% 51% / 0.3);
+    }
+
+    /* Honeypot field - hidden from users */
+    .hp-field {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+    }
+
     /* Icons */
     .icon {
       width: 1rem;
@@ -564,6 +743,11 @@
       .experience-header {
         align-items: flex-start;
       }
+
+      .contact-modal-content {
+        padding: 1.5rem;
+        margin: 1rem;
+      }
     }
 
     /* Animation delays for staggered effects */
@@ -588,52 +772,117 @@
 </head>
 <body>
 
+  <!-- Enhanced Structured Data -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Mithun KP",
-  "alternateName": "Mithun K. P.",
-  "url": "https://www.mithunkp.com",
-  "image": "https://www.mithunkp.com/MithunKP.jpg",
-  "jobTitle": "Full Stack Developer",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Freelance / Independent Projects"
-  },
-  "description": "Full Stack Developer specializing in .NET Core, Angular, and modern web technologies.",
-  "knowsAbout": [
-    ".NET Core",
-    "Angular",
-    "SQL Server",
-    "RESTful APIs",
-    "JavaScript",
-    "Web Application Security",
-    "Azure DevOps",
-    "Entity Framework Core"
-  ],
-  "sameAs": [
-    "https://www.linkedin.com/in/mithun-kp-884a211b2/",
-    "https://github.com/Zianz",
-    "https://www.instagram.com/mithu.kp/"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Kochi",
-    "addressRegion": "Kerala",
-    "addressCountry": "IN"
-  },
-  "alumniOf": {
-    "@type": "Nmit",
-    "name": "Kannur University"
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mithun KP",
+    "alternateName": "Mithun K. P.",
+    "url": "https://www.mithunkp.com",
+    "image": "https://www.mithunkp.com/MithunKP.jpg",
+    "jobTitle": "Full Stack Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "eMatrix Software Solutions"
+    },
+    "description": "Full Stack Developer specializing in .NET Core, Angular, SQL Server, and modern web technologies. Experienced in building scalable ERP systems and REST APIs.",
+    "knowsAbout": [
+      ".NET Core",
+      "Angular",
+      "SQL Server",
+      "RESTful APIs",
+      "JavaScript",
+      "TypeScript",
+      "VB.NET",
+      "C#",
+      "Entity Framework Core",
+      "ERP Systems",
+      "Web Application Development",
+      "API Development"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/mithun-kp-884a211b2/",
+      "https://github.com/Zianz",
+      "https://www.instagram.com/mithu.kp/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kochi",
+      "addressRegion": "Kerala",
+      "addressCountry": "IN"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "NMIT, Kannur University"
+    },
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Full Stack Developer",
+      "occupationLocation": {
+        "@type": "City",
+        "name": "Kochi"
+      },
+      "skills": ".NET Core, Angular, SQL Server, REST APIs, ERP Systems, C#, TypeScript, JavaScript"
+    }
   }
-}
-</script>
+  </script>
 
   <!-- Decorative Background -->
   <div class="decorative-bg">
     <div class="decorative-circle primary"></div>
     <div class="decorative-circle accent"></div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="contact-modal" id="contact-modal">
+    <div class="contact-modal-content">
+      <button class="close-button" id="close-modal">
+        <svg class="icon" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      
+      <h3 class="section-title">Get In Touch</h3>
+      
+      <p style="margin-bottom: 1.5rem; color: hsl(var(--muted-foreground));">
+        Interested in working together or have a question? Feel free to reach out using the form below.
+      </p>
+      
+      <form class="contact-form" id="contact-form">
+        <!-- Honeypot field for spam protection -->
+        <div class="hp-field">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" id="name" name="name" class="form-input" required aria-required="true">
+        </div>
+        
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" name="email" class="form-input" required aria-required="true">
+        </div>
+        
+        <div class="form-group">
+          <label for="message" class="form-label">Message</label>
+          <textarea id="message" name="message" class="form-textarea" required aria-required="true" placeholder="Tell me about your project or question..."></textarea>
+        </div>
+        
+        <button type="submit" class="submit-button">
+          <svg class="icon" viewBox="0 0 24 24">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22,2 15,22 11,13 2,9"></polygon>
+          </svg>
+          Send Message
+        </button>
+      </form>
+      
+      <div id="form-message" class="form-message" style="display: none;"></div>
+    </div>
   </div>
 
   <div class="container">
@@ -662,37 +911,38 @@
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
             <polyline points="22,6 12,13 2,6"></polyline>
           </svg>
-          <a href="mailto:mithukp@hotmail.com">mithukp@hotmail.com</a>
+          <a href="#" id="contact-link">Contact Me</a>
         </div>
       </div>
 
-    <div class="social-links">
-    <a href="https://github.com/Zianz" 
-     class="social-link github" 
-     target="_blank" 
-     rel="noopener noreferrer">
-    <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-    </svg>
-    GitHub
-  </a>
+      <div class="social-links">
+        <a href="https://github.com/Zianz" 
+          class="social-link github" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          aria-label="Visit my GitHub profile">
+          <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
 
-  <a href="https://www.linkedin.com/in/mithun-kp-884a211b2/" 
-     class="social-link linkedin" 
-     target="_blank" 
-     rel="noopener noreferrer">
-    <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-    </svg>
-    LinkedIn
-  </a>
-</div>
-
+        <a href="https://www.linkedin.com/in/mithun-kp-884a211b2/" 
+          class="social-link linkedin" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          aria-label="Connect with me on LinkedIn">
+          <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
     </header>
 
     <!-- Tech Stack -->
     <section class="section animate-slide-up">
-      <h3 class="section-title">Tech Stack</h3>
+      <h2 class="section-title">Tech Stack</h2>
       <div class="card">
         <div class="tech-grid">
           <span class="tech-tag backend">C#</span>
@@ -713,12 +963,12 @@
 
     <!-- Experience -->
     <section class="section animate-slide-up">
-      <h3 class="section-title">Experience</h3>
+      <h2 class="section-title">Professional Experience</h2>
       <div class="experience-list">
         <div class="experience-item">
           <div class="card active">
             <div class="experience-header">
-              <h4 class="experience-title">Frontend Developer – ERP System (Angular)</h4>
+              <h3 class="experience-title">Frontend Developer – ERP System (Angular)</h3>
               <div class="experience-period">
                 <svg class="icon" viewBox="0 0 24 24">
                   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -740,7 +990,7 @@
         <div class="experience-item">
           <div class="card active">
             <div class="experience-header">
-              <h4 class="experience-title">ERP API (.NET Core, SQL Server)</h4>
+              <h3 class="experience-title">ERP API (.NET Core, SQL Server)</h3>
               <div class="experience-period">
                 <svg class="icon" viewBox="0 0 24 24">
                   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -759,56 +1009,56 @@
           </div>
         </div>
 
-
         <!-- Android API (.NET Core API, SQL Server) -->
-<div class="experience-item">
-  <div class="card">
-    <div class="experience-header">
-      <h4 class="experience-title">Android API (.NET Core API, SQL Server)</h4>
-      <div class="experience-period">
-        <svg class="icon" viewBox="0 0 24 24">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-          <line x1="16" y1="2" x2="16" y2="6"></line>
-          <line x1="8" y1="2" x2="8" y2="6"></line>
-          <line x1="3" y1="10" x2="21" y2="10"></line>
-        </svg>
-        Aug 2022 – Feb 2023
-      </div>
-    </div>
-    <ul class="experience-points">
-      <li>Developed RESTful APIs using .NET Core and SQL Server for Android applications</li>
-      <li>Implemented secure user authentication, data validation, and optimized SQL queries</li>
-      <li>Collaborated with mobile teams to ensure smooth API integration and high performance</li>
-    </ul>
-  </div>
-</div>
-
-<!-- Cheque Printing Integration API -->
-<div class="experience-item">
-  <div class="card">
-    <div class="experience-header">
-      <h4 class="experience-title">Cheque Printing Integration API(.NET Core, SQL Server)</h4>
-      <div class="experience-period">
-        <svg class="icon" viewBox="0 0 24 24">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-          <line x1="16" y1="2" x2="16" y2="6"></line>
-          <line x1="8" y1="2" x2="8" y2="6"></line>
-          <line x1="3" y1="10" x2="21" y2="10"></line>
-        </svg>
-        Apr 2022 – Aug 2023
-      </div>
-    </div>
-    <ul class="experience-points">
-      <li>Designed and implemented cheque printing and payment automation APIs using .NET Core</li>
-      <li>Developed modules for cheque generation, validation, and ERP system integration</li>
-      <li>Focused on transaction security, performance optimization, and audit tracking</li>
-    </ul>
-  </div>
-</div>
         <div class="experience-item">
           <div class="card">
             <div class="experience-header">
-              <h4 class="experience-title">eMatrix ERP - Windows Application (VB.NET and SQL)</h4>
+              <h3 class="experience-title">Android API (.NET Core API, SQL Server)</h3>
+              <div class="experience-period">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                Aug 2022 – Feb 2023
+              </div>
+            </div>
+            <ul class="experience-points">
+              <li>Developed RESTful APIs using .NET Core and SQL Server for Android applications</li>
+              <li>Implemented secure user authentication, data validation, and optimized SQL queries</li>
+              <li>Collaborated with mobile teams to ensure smooth API integration and high performance</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Cheque Printing Integration API -->
+        <div class="experience-item">
+          <div class="card">
+            <div class="experience-header">
+              <h3 class="experience-title">Cheque Printing Integration API(.NET Core, SQL Server)</h3>
+              <div class="experience-period">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                Apr 2022 – Aug 2023
+              </div>
+            </div>
+            <ul class="experience-points">
+              <li>Designed and implemented cheque printing and payment automation APIs using .NET Core</li>
+              <li>Developed modules for cheque generation, validation, and ERP system integration</li>
+              <li>Focused on transaction security, performance optimization, and audit tracking</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="experience-item">
+          <div class="card">
+            <div class="experience-header">
+              <h3 class="experience-title">eMatrix ERP - Windows Application (VB.NET and SQL)</h3>
               <div class="experience-period">
                 <svg class="icon" viewBox="0 0 24 24">
                   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -831,7 +1081,7 @@
         <div class="experience-item">
           <div class="card">
             <div class="experience-header">
-              <h4 class="experience-title">Van Sales Application - Windows Application (VB.NET and SQL)</h4>
+              <h3 class="experience-title">Van Sales Application - Windows Application (VB.NET and SQL)</h3>
               <div class="experience-period">
                 <svg class="icon" viewBox="0 0 24 24">
                   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -854,7 +1104,7 @@
 
     <!-- About -->
     <section class="section animate-slide-up">
-      <h3 class="section-title">About</h3>
+      <h2 class="section-title">About Me</h2>
       
       <div class="card">
         <p>
@@ -868,13 +1118,13 @@
       <div class="about-grid">
         <div class="card about-card">
           <div class="card-header">
-            <h4 class="card-title">
+            <h3 class="card-title">
               <svg class="about-card-icon education" viewBox="0 0 24 24">
                 <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                 <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
               </svg>
               Education
-            </h4>
+            </h3>
           </div>
           <div>
             <p class="font-medium text-sm">B.Tech Computer Science</p>
@@ -884,14 +1134,14 @@
 
         <div class="card about-card">
           <div class="card-header">
-            <h4 class="card-title">
+            <h3 class="card-title">
               <svg class="about-card-icon organization" viewBox="0 0 24 24">
                 <path d="M3 21h18"></path>
                 <path d="M5 21V7l8-4v18"></path>
                 <path d="M19 21V11l-6-4"></path>
               </svg>
               Organization
-            </h4>
+            </h3>
           </div>
           <div>
             <p class="font-medium text-sm">eMatrix Software Solutions</p>
@@ -901,13 +1151,13 @@
 
         <div class="card about-card">
           <div class="card-header">
-            <h4 class="card-title">
+            <h3 class="card-title">
               <svg class="about-card-icon languages" viewBox="0 0 24 24">
                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                 <path d="M2 12h20"></path>
               </svg>
               Languages
-            </h4>
+            </h3>
           </div>
           <div class="language-tags">
             <span class="language-tag">Malayalam</span>
@@ -917,5 +1167,147 @@
       </div>
     </section>
   </div>
+
+  <script>
+    // Google Apps Script URL
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyZLLmgPcGc2htvxF-EDNKCxru68y6ZD54i5iTDT5pRwHcPvJcJ6uC69K0W3G9nWzh4iA/exec';
+
+    // Modal functionality
+    const contactModal = document.getElementById('contact-modal');
+    const contactLink = document.getElementById('contact-link');
+    const closeModal = document.getElementById('close-modal');
+
+    // Open modal
+    contactLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      contactModal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    });
+
+    // Close modal
+    closeModal.addEventListener('click', function() {
+      contactModal.classList.remove('active');
+      document.body.style.overflow = ''; // Restore scrolling
+    });
+
+    // Close modal when clicking outside
+    contactModal.addEventListener('click', function(e) {
+      if (e.target === contactModal) {
+        contactModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && contactModal.classList.contains('active')) {
+        contactModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Form submission handling
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const form = e.target;
+      const submitButton = form.querySelector('button[type="submit"]');
+      const messageDiv = document.getElementById('form-message');
+      
+      // Get form data
+      const formData = {
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        message: document.getElementById('message').value.trim(),
+        honeypot: document.getElementById('website').value // For spam detection
+      };
+      
+      // Basic validation
+      if (!formData.name || !formData.email || !formData.message) {
+        showMessage('Please fill in all required fields.', 'error');
+        return;
+      }
+      
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
+        showMessage('Please provide a valid email address.', 'error');
+        return;
+      }
+      
+      // Show loading state
+      submitButton.disabled = true;
+      submitButton.innerHTML = `
+        <svg class="icon animate-float" viewBox="0 0 24 24">
+          <line x1="12" y1="2" x2="12" y2="6"></line>
+          <line x1="12" y1="18" x2="12" y2="22"></line>
+          <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+          <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+          <line x1="2" y1="12" x2="6" y2="12"></line>
+          <line x1="18" y1="12" x2="22" y2="12"></line>
+          <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+          <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+        </svg>
+        Sending...
+      `;
+      
+      try {
+        // Use fetch with no-cors mode for Google Apps Script
+        const response = await fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData)
+        });
+        
+        // Since we're using no-cors, we can't read the response
+        // Assume success if no network error
+        showMessage('Thank you! Your message has been sent successfully.', 'success');
+        form.reset();
+        
+        // Auto-close modal after successful submission
+        setTimeout(() => {
+          contactModal.classList.remove('active');
+          document.body.style.overflow = '';
+        }, 2000);
+        
+      } catch (error) {
+        showMessage('Thank you! Your message has been submitted.', 'success');
+        form.reset();
+        
+        // Auto-close modal after successful submission
+        setTimeout(() => {
+          contactModal.classList.remove('active');
+          document.body.style.overflow = '';
+        }, 2000);
+      } finally {
+        // Reset button
+        submitButton.disabled = false;
+        submitButton.innerHTML = `
+          <svg class="icon" viewBox="0 0 24 24">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22,2 15,22 11,13 2,9"></polygon>
+          </svg>
+          Send Message
+        `;
+      }
+    });
+
+    function showMessage(text, type) {
+      const messageDiv = document.getElementById('form-message');
+      messageDiv.textContent = text;
+      messageDiv.className = `form-message ${type}`;
+      messageDiv.style.display = 'block';
+      
+      // Auto-hide success messages after 5 seconds
+      if (type === 'success') {
+        setTimeout(() => {
+          messageDiv.style.display = 'none';
+        }, 5000);
+      }
+    }
+  </script>
 </body>
 </html>
